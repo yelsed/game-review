@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
            // DIT DOEN WE OM EEN SESSION FIXATION ATTACK TE VERMIJDEN OMDAT IK AL EERDER EEN SESSION START HEB GEBRUIKT
            session_regenerate_id();
 
-           $_SESSION["user_id"] = $user["id"];
+           $_SESSION["user_id"] = $user["user_id"];
 
            header("Location: index.php");
            exit;
