@@ -40,7 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"> -->
+    <?php
+require_once("partials/nav.php");
+require_once("partials/head.php");
+?>
 </head>
 <body>
 
@@ -63,6 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 </body>
+
+<?php
+require_once("partials/footer.php");
+?>
 </html>
 
 
