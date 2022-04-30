@@ -42,7 +42,7 @@ nav ul li a{
 
 }
 
-a.active,a:hover{
+a.active{
     background: #1b9bff;
     transition:  .5;
 }
@@ -76,6 +76,9 @@ a.active,a:hover{
     .checkbtn{
         display: block;
     }
+    .dropbtn{
+      display: none;
+    }
     ul {
         position: fixed;
         width: 100%;
@@ -101,6 +104,13 @@ a.active,a:hover{
         background: none;
         color: #0082e6;
     }
+
+    .sticker-content{
+      display:flex;
+      flex-direction: column;
+    }
+
+
     #check:checked ~ ul {
         left : 0;
         background-size: cover;
@@ -108,16 +118,71 @@ a.active,a:hover{
     }
 }
 
-/*-------*/
+@media screen and (min-width: 858px){
+  .dropbtn {
+    color: white;
+    /* padding: 10px; */
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    /* width: 80%; */
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    top: 20px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    border-radius: 3px;
+    left: -50px;
+  }
+  .dropdown:hover .dropbtn {
+    background-color: #1b9bff;
+  }
+  .sticker-content{
+   font-size: 12px;
+  }
 
-.container {
+}
+
+.msg{
+  padding-top: 1%;
+  color: red;
+  text-align: center;
+  /* margin-left: 50%; */
+}
+
+.containerbox {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 3%;
   }
-  .container .box {
+  .containerbox .box {
     position: relative;
     width: 350px;
     padding: 40px;
@@ -130,7 +195,7 @@ a.active,a:hover{
     text-align: center;
   }
 
-  .container .box .icon {
+  .containerbox .box .icon {
       position: relative;
       width: 80px;
       height: 80px;
@@ -160,179 +225,6 @@ a.active,a:hover{
   .boxbtn:hover{
     background-color: red;
   }
-
-  /* footer*/
-
-  /* .footer-dark {
-    padding:50px 0;
-    color:#f0f9ff;
-    background-color:#282d32;
-    font-family: 'Poppins';
-    margin-top: 3%;
-  }
-  
-  .footer-dark h3 {
-    margin-top:0;
-    margin-bottom:12px;
-    font-weight:bold;
-    font-size:16px;
-  }
-  
-  .footer-dark ul {
-    padding:0;
-    list-style:none;
-    line-height:1.6;
-    font-size:14px;
-    margin-bottom:0;
-  }
-  
-  .footer-dark ul a {
-    color:inherit;
-    text-decoration:none;
-    opacity:0.6;
-  }
-  
-  .footer-dark ul a:hover {
-    opacity:0.8;
-  }
-  
-  @media (max-width:767px) {
-    .footer-dark .item:not(.social) {
-      text-align:center;
-      padding-bottom:20px;
-    }
-  }
-  
-  .footer-dark .item.text {
-    margin-bottom:36px;
-  }
-  
-  @media (max-width:767px) {
-    .footer-dark .item.text {
-      margin-bottom:0;
-    }
-  }
-  
-  .footer-dark .item.text p {
-    opacity:0.6;
-    text-align: center;
-  }
-  
-  .footer-dark .item.social {
-    text-align:center;
-  }
-  
-  @media (max-width:991px) {
-    .footer-dark .item.social {
-      text-align:center;
-      margin-top:20px;
-    }
-  }
-  
-  .footer-dark .item.social > a {
-    font-size:20px;
-    width:36px;
-    height:36px;
-    line-height:36px;
-    display:inline-block;
-    text-align:center;
-    border-radius:50%;
-    box-shadow:0 0 0 1px rgba(255,255,255,0.4);
-    margin:0 8px;
-    color:#fff;
-    opacity:0.75;
-  }
-  
-  
-  .footer-dark .item.social > a:hover {
-    opacity:0.9;
-  }
-  
-  .footer-dark .copyright {
-    text-align:center;
-    padding-top:24px;
-    opacity:0.3;
-    font-size:13px;
-    margin-bottom:0;
-  } */
-
-  /* new/*
-
-  /* .fcontainer { 
-    margin-top: 3%;
-    color:#f0f9ff;
-    background-color:#282d32;
-    font-family: 'Poppins';
-    margin-top: 3%;
-  }
-  .fcontainer .item {
-    position: relative;
-    width: 350px;
-    padding: 40px;
-    border-radius: 4px;
-    margin: 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-    text-align: center;
-  }
-
-  .row{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3%;
-  }
-
-  @media (max-width:991px) {
-    .footer-dark .item.social {
-      text-align:center;
-      margin-top:20px;
-    }
-  }
-
-  @media (max-width:767px) {
-    .footer-dark .item.text {
-      margin-bottom:0;
-    }
-  }
-
-  @media (max-width:767px) {
-    .footer-dark .item:not(.social) {
-      text-align:center;
-      padding-bottom:20px;
-    }
-}
-    .footer-dark .copyright {
-        text-align:center;
-        padding-top:24px;
-        opacity:0.3;
-        font-size:13px;
-        margin-bottom:0;
-      } 
-
-      .social > a {
-        font-size:20px;
-        width:36px;
-        height:36px;
-        line-height:36px;
-        display:inline-block;
-        text-align:center;
-        border-radius:50%;
-        box-shadow:0 0 0 1px rgba(255,255,255,0.4);
-        margin:0 8px;
-        color:#fff;
-        opacity:0.75;
-      }
-
-      .social {
-        text-align:center;
-        padding-top:24px;
-        opacity:0.3;
-        font-size:13px;
-        margin-bottom:0;
-      } */
-
 
 .fcontainer{
 	max-width: 1170px;
@@ -426,3 +318,125 @@ ul{
     margin-bottom:0; */
     color: white;
   } 
+
+.signupbtn {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: left; */
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  /* margin-left: 25%; */
+} 
+
+.custom-field {
+    position: relative;
+    font-size: 14px;
+    border-top: 20px solid transparent;
+    margin-bottom: 5px;
+    --field-padding: 12px;
+}
+
+.custom-field input {
+  border: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: var(--field-padding);
+  border-radius: 3px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: var(--field-padding);
+  width: calc(100% - (var(--field-padding) * 2));
+  overflow: hidden;
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
+  top: 22px;
+  line-height: 100%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.signbtn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 40px 2px;
+  width: 250px;
+  border-radius: 5px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.signbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.signbtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.signbtn:hover span {
+  padding-right: 25px;
+}
+
+.signbtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+.custom-field .placeholder {
+  position: absolute;
+  left: var(--field-padding);
+  width: calc(100% - (var(--field-padding) * 2));
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top: 22px;
+  line-height: 100%;
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: 
+    /* top 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease; */
+
+    top 0.3s cubic-bezier(0, 0.64, 0.25, 1),
+    color 0.3s cubic-bezier(0.25, 0.1, 0.45, 0.34),
+    font-size 0.3s cubic-bezier(0.25, 0.1, 0.59, 0.61);
+}
+
+.custom-field input.dirty + .placeholder,
+.custom-field input:focus + .placeholder,
+.custom-field input:not(:placeholder-shown) + .placeholder {
+  top: -10px;
+  font-size: 10px;
+  color: #222;
+}
+
+.welcome{
+  text-align: center;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}

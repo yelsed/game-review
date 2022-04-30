@@ -13,7 +13,13 @@ require_once("partials/head.php");
 
 <html>
 <body>
-    <div class="container">
+    <div class="welcome">
+<?php if (isset($user)) : ?>
+Welcome back <?= htmlspecialchars($user["naam"]) ?>
+<?php else : ?>
+    <?php endif; ?>
+</div>
+    <div class="containerbox">
         <div class="box">
             <div class="icon">01</div>
             <div class="content">
@@ -33,6 +39,69 @@ require_once("partials/head.php");
             </div>
         </div>
         <div class="box">
+            <div class="icon">03</div>
+            <div class="content">
+                <h3>Speel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aspernatur facere quaerat debitis
+                    laboriosam aut doloribus voluptatibus dolor veniam, reiciendis quo</p>
+                <a class="boxbtn" href="#">Read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icon">03</div>
+            <div class="content">
+                <h3>Speel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aspernatur facere quaerat debitis
+                    laboriosam aut doloribus voluptatibus dolor veniam, reiciendis quo</p>
+                <a class="boxbtn" href="#">Read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icon">03</div>
+            <div class="content">
+                <h3>Speel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aspernatur facere quaerat debitis
+                    laboriosam aut doloribus voluptatibus dolor veniam, reiciendis quo</p>
+                <a class="boxbtn" href="#">Read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icon">03</div>
+            <div class="content">
+                <h3>Speel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aspernatur facere quaerat debitis
+                    laboriosam aut doloribus voluptatibus dolor veniam, reiciendis quo</p>
+                <a class="boxbtn" href="#">Read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icon">03</div>
+            <div class="content">
+                <h3>Speel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aspernatur facere quaerat debitis
+                    laboriosam aut doloribus voluptatibus dolor veniam, reiciendis quo</p>
+                <a class="boxbtn" href="#">Read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icon">03</div>
+            <div class="content">
+                <h3>Speel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aspernatur facere quaerat debitis
+                    laboriosam aut doloribus voluptatibus dolor veniam, reiciendis quo</p>
+                <a class="boxbtn" href="#">Read more</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="icon">03</div>
+            <div class="content">
+                <h3>Speel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aspernatur facere quaerat debitis
+                    laboriosam aut doloribus voluptatibus dolor veniam, reiciendis quo</p>
+                <a class="boxbtn" href="#">Read more</a>
+            </div>
+        </div>
+         <div class="box">
             <div class="icon">03</div>
             <div class="content">
                 <h3>Speel</h3>

@@ -48,21 +48,31 @@ require_once("partials/head.php");
 </head>
 <body>
 
-    <h1>Login</h1>
 
+    <div class="msg">
     <?php if ($is_invalid): ?>
         <span style="color: red">Invalid login</span>
     <?php endif; ?>
-
+    </div>
     <form method="post">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email"
+    <div class="signupbtn">
+    <h1>Login</h1>
+    <label class="custom-field">
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="&nbsp;"
                    value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
+            <span class="placeholder">Email</span>
+            </label>
+    <label class="custom-field">
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="&nbsp;">  
+            <span class="placeholder">Password</span>
+            </label>
+            <button class="signbtn"><span>Login</span></button>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password"> 
-
-            <button>Login</button>
+            <p>Nieuwe klant? <a href="signup.php" style="color:dodgerblue">Meld je aan</a>.</p>
+            <br>
+            </div>
     </form>
 
 

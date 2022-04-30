@@ -1,19 +1,19 @@
 <?php session_start(); ?>
+<?php
+require_once("partials/nav.php");
+require_once("partials/head.php");
+?>
 <!DOCTYPE html>
 <head>
     <title>Signup</title>
     <meta charset="UTF-8">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"> -->
     <!-- <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script> -->
-    <script src="js/validation.js" defer></script>
-        <?php
-require_once("partials/nav.php");
-require_once("partials/head.php");
-?>
+    <!-- <script src="js/validation.js" defer></script> -->
 </head>
 <body>
 
-<span style="color: red">
+<div class="msg">
         <?php
         if (isset($_SESSION['msg'])) {
             $errors = $_SESSION['msg'];
@@ -22,7 +22,7 @@ require_once("partials/head.php");
             }
         }
         ?>
-    </span>
+    </div>
     
    
     
@@ -54,10 +54,14 @@ require_once("partials/head.php");
         </div>
     </div> -->
     
-    <div class="classbtn">
+    <div class="signupbtn">
     <h1>Signup</h1>
+
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
     <label class="custom-field">
-  <input type="text" id="name" name="name" placeholder="&nbsp;"/>
+  <input type="text" id="name" name="name" placeholder="&nbsp;" />
   <span class="placeholder">Name</span>
 </label>
 
@@ -81,7 +85,13 @@ require_once("partials/head.php");
   <span class="placeholder">Repeat Password</span>
 </label>
 
-<button class="signbtn">Sign up</button>
+<label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+<button class="signbtn"><span>Sign up</span></button>
     </div>
     </form>
 </body>
