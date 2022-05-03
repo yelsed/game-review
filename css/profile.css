@@ -1,0 +1,44 @@
+.profilecontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+
+  }
+  .profilecontainer .pfbox {
+    position: relative;
+    width: 80%;
+    height: 600px;
+    padding: 100px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    border-radius: 4px;
+    margin-bottom: 4%;
+    margin-top: 2%;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    overflow: auto;
+  }
+
+  .boxbtnn{
+      display: inline-block;
+      flex-direction:row ;
+      padding: 10px 20px;
+      background: #000;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      margin-top: 20px;
+  }
+
+  .boxbtnn:hover{
+    background-color: red;
+  }
+
+  /* .fcontainer{
+    max-width: 1170px;
+    margin:auto;
+  } */

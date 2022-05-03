@@ -23,7 +23,7 @@ require_once("partials/head.php");
         }
         ?>
     </div>
-    
+
    
     
     <form action="process-signup.php" method="post" id="signup">
@@ -91,7 +91,7 @@ require_once("partials/head.php");
 
 <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
-<button class="signbtn"><span>Sign up</span></button>
+<button class="signbtn" ONCLICK="alert('Signup successful.')">Sign up</button> 
     </div>
     </form>
 </body>

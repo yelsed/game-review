@@ -15,7 +15,7 @@ require_once("partials/head.php");
 <body>
     <div class="welcome">
 <?php if (isset($user)) : ?>
-Welcome back <?= htmlspecialchars($user["naam"]) ?>
+Welcome back <?= htmlspecialchars($user["username"]) ?>
 <?php else : ?>
     <?php endif; ?>
 </div>

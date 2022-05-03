@@ -3,7 +3,7 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <label class="logo">Tatamoc ;)</label>
+        <a href="index.php" class="logo">Tatamoc ;)</a>
         <ul>
             <li><a class="active" href="index.php">Home</a></li>
             <li><a href="#">About</a></li>

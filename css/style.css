@@ -16,7 +16,7 @@ nav {
     width: 100%;
 }
 
-label.logo{
+a.logo{
     color: white;
     font-size: 35px;
     line-height: 80px;
@@ -63,7 +63,7 @@ a.active{
 }
 
 @media (max-width: 952px){
-    label.logo{
+    a.logo{
         font-size: 30px;
         padding-left: 50px;
     }
@@ -385,7 +385,7 @@ ul{
 }
 
 .signbtn span:after {
-  content: '\00bb';
+  /* content: '\00bb'; */
   position: absolute;
   opacity: 0;
   top: 0;
