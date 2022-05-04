@@ -54,7 +54,6 @@ $data = array( $_POST["name"], $_POST["email"], $password_hash, $_POST['username
 // ALS DE STMT IS GEEXECUTE ECHO SIGNUP SUCCESSFUL ANDERS LAAT ERROR ZIEN
 if ($errors) {
     $_SESSION['msg'] = $errors;
-    var_dump($_SESSION['msg']);
     header('location: signup.php');
     die;
 }

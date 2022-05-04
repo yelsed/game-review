@@ -6,15 +6,15 @@
         <a href="index.php" class="logo">Tatamoc ;)</a>
         <ul>
             <li><a class="active" href="index.php">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="games.php">Games</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
             <li class="dropdown">
             <img class="dropbtn" src="img/user.svg">
                 <div class="dropdown-content">
-                    <?php if (isset($user)) : ?>
-                       <a href="account.php">My Account</a>
-                       <a href="logout.php">Log out</a>
+                    <?php if (isset($_SESSION["user_id"])) : ?>
+                       <a class="sticker-content" href="account.php">My Account</a>
+                       <a class="sticker-content" href="logout.php">Log out</a>
                     <?php else : ?>
                         <a class="sticker-content" href="login.php">Login </a>
                         <a class="sticker-content" href="signup.php">Sign up</a>

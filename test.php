@@ -14,13 +14,14 @@
     // $query = 'search "riot"; fields id,name,cover; limit 250; offset 10;';
     $builder = new IGDBQueryBuilder();
     
+    
 try {
     // executing the query
     $query = $builder
     // searching for games LIKE uncharted
-    ->search("Pokémon")
+    ->search("League")
     // we want to see these fields in the results
-    ->fields("id, name, genres.name")
+    ->fields("id, name, cover.image_id")
     // we only need maximum 5 results per query (pagination)
     ->limit(500)
     // we would like to show the third page; fetch the results from the tenth element (pagination)
@@ -42,19 +43,24 @@ try {
 
 
 foreach ($games as $game => $info) {
-    $name = $info->name;
-    $id = $info->id;
-    echo $name . "<br>";
-    if (property_exists($info, 'genres')) {
-        foreach ($info->genres as $genre) {
-            $genre = $genre->name;
-            //TODO: meerdere genres meegeven.
-        }
+    var_dump($info);
+    // $cover = $info->cover;
+    // echo $cover . "<br>";
+    foreach($info as $cover){
+        var_dump($cover);
+        echo "<br><br>";
+        
     }
-    // $sql = "INSERT game (game_id,naam_game,genre) VALUES (?,?,?)"; // maak sql voor insert
-    // $sel = $PDO->prepare($sql);   // zet sql klaar voor transport
-    // $data = array($id, $name, $genre);   // zet alle data in array 
-    // $sel->execute($data);
+    // if (property_exists($info, 'genres')) {
+    //     foreach ($info->genres as $genre) {
+    //         $genre = $genre->cover;
+    //         //TODO: meerdere genres meegeven.
+    //     }
+    // }
+    // // $sql = "INSERT game (game_id,naam_game,genre) VALUES (?,?,?)"; // maak sql voor insert
+    // // $sel = $PDO->prepare($sql);   // zet sql klaar voor transport
+    // // $data = array($id, $name, $genre);   // zet alle data in array 
+    // // $sel->execute($data);
 }
 
 

@@ -9,6 +9,10 @@ if (isset($_SESSION["user_id"])) {
 }
   require_once("partials/nav.php");
   require_once("partials/head.php");
+if (!isset($_SESSION["user_id"])) {
+    header('Location: login.php'); 
+    exit;
+}
 ?>
 <html>
     <head>
@@ -20,10 +24,10 @@ if (isset($_SESSION["user_id"])) {
        <div class="pfbox">
            <h1>Your Account</h1>
        <div class="content">
-                <td><a class="boxbtnn" href='update.php?id=<?php echo $user['user_id']; ?>'>Edit Your information</a> </td><br>
-                <td><a class="boxbtnn" href='delete.php?id=<?php echo $user['user_id']; ?>'>Delete Your Account</a> </td><br>
                 <td><a class="boxbtnn" href='update.php?id=<?php echo $user['user_id']; ?>'>Show Your Profile</a> </td><br>
-                <td><a class="boxbtnn" href='update.php?id=<?php echo $user['user_id']; ?>'>Show Followers</a> </td>
+                <td><a class="boxbtnn" href='update.php?id=<?php echo $user['user_id']; ?>'>Edit Your information</a> </td><br>
+                <td><a class="boxbtnn" href='update.php?id=<?php echo $user['user_id']; ?>'>Show Followers</a> </td><br>
+                <td><a class="boxbtnn" href='delete.php?id=<?php echo $user['user_id']; ?>'>Delete Your Account</a> </td><br>   
                </div> 
             </div>
 </div>

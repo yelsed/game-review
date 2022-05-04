@@ -42,3 +42,19 @@
     max-width: 1170px;
     margin:auto;
   } */
+/* 
+  input {
+    background-color: grey;
+    color: white;
+    text-align: center;
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction:row ;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: xx-large;
+    margin-top: 20px;
+    margin-left: 20%;
+  } */
