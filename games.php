@@ -20,9 +20,6 @@ if (!isset($_SESSION["user_id"])) {
     header('Location: login.php'); 
     exit;
 }
-
-
-// echo $_POST['search'];
 if(isset($_POST['search'])){
 
     require "src/class.igdb.php";
