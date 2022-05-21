@@ -12,7 +12,6 @@ if (!isset($_SESSION["user_id"])) {
     exit;
 }
 if (isset($_POST['game'])) {
-
     require "src/class.igdb.php";
 
     $igdb = new IGDB("01skzfa4ayd97n6c1hkob3a2vw9j8c", "2sutaaqjmyjarukg8j8vwghhnrsqi3");
@@ -26,7 +25,7 @@ if (isset($_POST['game'])) {
             // searching for games LIKE uncharted
             ->search($_POST['game'])
             // we want to see these fields in the results
-            ->fields("id, name, summary, cover.image_id")
+            ->fields("id, name, summary, cover.image_id, genres.name")
             // we only need maximum 5 results per query (pagination)
             ->limit(500)
             // we would like to show the third page; fetch the results from the tenth element (pagination)
@@ -45,7 +44,6 @@ if (isset($_POST['game'])) {
         // a non-successful response recieved from the IGDB API
         echo $e->getMessage();
     }
-    var_dump($games);
 }
 require_once("partials/nav.php");
 require_once("partials/head.php");
@@ -65,10 +63,19 @@ require_once("partials/head.php");
                     <div class="box">
                         <div class="content">
                             <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/<?php echo $game->cover->image_id; ?>.jpg">
-                            <p><?php echo $game->name ?></p>
-                            <p><?php echo $game->summary ?></p>
-
-
+                            <h1><?php echo $game->name ?></h1>
+                            
+                            <p>Genres</p>
+                                <?php
+                                foreach ($game->genres as $genres => $genre) {
+                                    if ($genres === array_key_last($game->genres)) {
+                                        echo $genre->name;
+                                    } else {
+                                        echo $genre->name . ", ";
+                                    }
+                                }
+                                ?>
+ 
                         </div>
                     </div>
                 <?php endif; ?>
