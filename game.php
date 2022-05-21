@@ -56,26 +56,26 @@ require_once("partials/head.php");
 </head>
 
 <body>
-    <div class="containerbox">
+    <div>
         <?php if (isset($games)) : ?>
             <?php foreach ($games as $game) : ?>
                 <?php if ($game->name === $_POST['game']) : ?>
                     <div class="box">
                         <div class="content">
                             <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/<?php echo $game->cover->image_id; ?>.jpg">
-                            <h1><?php echo $game->name ?></h1>
-                            
+                            <h1><?php echo $game->name ?></h1>  
                             <p>Genres</p>
-                                <?php
-                                foreach ($game->genres as $genres => $genre) {
-                                    if ($genres === array_key_last($game->genres)) {
-                                        echo $genre->name;
-                                    } else {
-                                        echo $genre->name . ", ";
-                                    }
+                            <?php
+                            foreach ($game->genres as $genres => $genre) {
+                                if ($genres === array_key_last($game->genres)) {
+                                    echo $genre->name;
+                                } else {
+                                    echo $genre->name . ", ";
                                 }
-                                ?>
- 
+                            }
+                            ?>
+                            <p><?php echo $game->summary ?></p>
+
                         </div>
                     </div>
                 <?php endif; ?>
