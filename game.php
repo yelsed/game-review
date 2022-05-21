@@ -1,20 +1,4 @@
 <?php
-// moet naar een functie bestand
-// function object_to_array($data)
-// {
-//     if (is_array($data) || is_object($data))
-//     {
-//         $result = [];
-//         foreach ($data as $key => $value)
-//         {
-//             $result[$key] = (is_array($value) || is_object($value)) ? object_to_array($value) : $value;
-//         }
-//         return $result;
-//     }
-//     return $data;
-// }
-
-
 session_start();
 if (isset($_SESSION["user_id"])) {
     $PDO = require __DIR__ . "/db.php";
@@ -23,14 +7,11 @@ if (isset($_SESSION["user_id"])) {
     $stmt->execute([$_SESSION["user_id"]]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 }
-
-require_once("partials/nav.php");
-require_once("partials/head.php");
 if (!isset($_SESSION["user_id"])) {
     header('Location: login.php');
     exit;
 }
-if (isset($_POST['search'])) {
+if (isset($_POST['game'])) {
 
     require "src/class.igdb.php";
 
@@ -43,9 +24,9 @@ if (isset($_POST['search'])) {
         // executing the query
         $query = $builder
             // searching for games LIKE uncharted
-            ->search($_POST['search'])
+            ->search($_POST['game'])
             // we want to see these fields in the results
-            ->fields("id, name, cover.image_id")
+            ->fields("id, name, summary, cover.image_id")
             // we only need maximum 5 results per query (pagination)
             ->limit(500)
             // we would like to show the third page; fetch the results from the tenth element (pagination)
@@ -64,7 +45,10 @@ if (isset($_POST['search'])) {
         // a non-successful response recieved from the IGDB API
         echo $e->getMessage();
     }
+    var_dump($games);
 }
+require_once("partials/nav.php");
+require_once("partials/head.php");
 ?>
 
 <html>
@@ -74,32 +58,20 @@ if (isset($_POST['search'])) {
 </head>
 
 <body>
-    <div class="welcome">
-        <!-- <?php if (isset($user)) : ?>
-    Welcome back <?= htmlspecialchars($user["username"]) ?>
-    <?php else : ?>
-        <?php endif; ?> -->
-    </div>
-    <form method="post" action="" name="searchgames">
-        <label class="custom-field">
-            <span class="placeholder">Search your game</span>
-            <input class="input_search" type="text" name="search" id="search" placeholder="&nbsp" ;></input>
-            <button type="submit" value="search">Search</button>
-        </label>
-    </form>
     <div class="containerbox">
         <?php if (isset($games)) : ?>
             <?php foreach ($games as $game) : ?>
-                <div class="box">
-                    <div class="content">
-                        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/<?php echo $game->cover->image_id; ?>.jpg">
-                        <p><?php echo $game->name ?></p>
-                        <form action="game.php" method="post">
-                            <input type="hidden" name="game" id="game" value="<?= $game->name ?>">
-                            <input type="submit"  class="boxbtn" value="Read more">
-                        </form>
+                <?php if ($game->name === $_POST['game']) : ?>
+                    <div class="box">
+                        <div class="content">
+                            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/<?php echo $game->cover->image_id; ?>.jpg">
+                            <p><?php echo $game->name ?></p>
+                            <p><?php echo $game->summary ?></p>
+
+
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             <?php endforeach; ?>
 
 
