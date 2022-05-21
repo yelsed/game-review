@@ -14,6 +14,7 @@ require_once("partials/head.php");
 <html>
 <body>
     <div class="container">
+    <div class="container">
         <div class="box">
             <div class="icon">01</div>
             <div class="content">
