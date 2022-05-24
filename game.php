@@ -66,14 +66,17 @@ require_once("partials/head.php");
                                     Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui
                                     <span class="more" href="#">Read more</span>
                                 </p>
+
                             </div>
 
                             <h1>Users</h1>
-                            <div class="scoreBall">9.3</div>
-                            <p>vehicula. Suspendisse sit amet eros porttitor, accumsan ex non, egestas eros.
-                                Etiam bibendum rutrum efficitur. Ut dictum lacus ielementum convallis.
-                                Nullam mattis fringilla consequat. Cras luctus porttitor lectus.
-                                Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui</p>
+                            <div class="score">
+                                <div class="scoreBall">9.3</div>
+                                <p>vehicula. Suspendisse sit amet eros porttitor, accumsan ex non, egestas eros.
+                                    Etiam bibendum rutrum efficitur. Ut dictum lacus ielementum convallis.
+                                    Nullam mattis fringilla consequat. Cras luctus porttitor lectus.
+                                    Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui</p>
+                            </div>
                             <div class="smallReview">
                                 <img class="userIMG" src="donnie.png" alt="user" />
                                 <p>laoreet mi, sed tristique dui. Suspendisse scelerisque elementum convallis.
@@ -81,6 +84,7 @@ require_once("partials/head.php");
                                     Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui
                                     <span class="more" href="#">Read more</span>
                                 </p>
+
                             </div>
                             <button class="btn">Make your own review</button>
                             <!-- </div> -->
