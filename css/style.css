@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
 *{
     padding: 0;
     margin: 0;
@@ -11,7 +12,7 @@ body {
 }
 
 nav {
-    background: #0082e6;
+    background: #4C4CFF;
     height: 80px;
     width: 100%;
 }
@@ -42,7 +43,7 @@ nav ul li a{
 }
 
 a.active{
-    background: #1b9bff;
+    background: #3C3CCC;
     transition:  .5;
 }
 
@@ -101,7 +102,7 @@ a.active{
 
     a:hover,a.active{
         background: none;
-        color: #0082e6;
+        color: #3C3CCC;
     }
 
     .sticker-content{
@@ -159,7 +160,7 @@ a.active{
     left: -50px;
   }
   .dropdown:hover .dropbtn {
-    background-color: #1b9bff;
+    background-color: #3C3CCC;
   }
   .sticker-content{
    font-size: 12px;
@@ -213,7 +214,7 @@ a.active{
   .boxbtn{
       display: inline-block;
       padding: 10px 20px;
-      background: #000;
+      background: #4C4CFF;
       border-radius: 4px;
       text-decoration: none;
       color: #fff;
@@ -222,7 +223,7 @@ a.active{
   }
 
   .boxbtn:hover{
-    background-color: red;
+    background-color: #4C4CFF;
   }
 
 .fcontainer{
@@ -238,7 +239,7 @@ ul{
 }
 .footer{
 	background-color: #282d32;;
-    padding: 70px 0;
+  padding: 70px 0;
 }
 .footer-col{
    width: 25%;
@@ -441,16 +442,11 @@ ul{
   font-weight: bold;
 }
 
-.gamecontainerbox{
-  
-
-}
- .gamebox {
+.gamebox {
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
   position: relative;
-  width: 70em;
   padding: 4em;
   background: #fff;
   box-shadow: 0 5px 15px rgba(0,0,0,.1);
@@ -459,8 +455,47 @@ ul{
   box-sizing: border-box;
   overflow: hidden;
 }
-.gamebox .gamecontent{
+.gamecontent{
 flex: 1;
 }
 
+.score{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items : center;
+  margin-bottom: 10px;
+}
 
+.scoreBall{
+  margin-right: 15px;
+  height: 75px !important;
+  width: 75px !important;
+  min-width: 75px !important;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #4C4CFF;
+  text-align: center;
+  padding: 25px 0;
+  color: #fff;
+  font-size: 20px
+}
+
+.smallReview{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items : center;
+  font-size: 14px;
+}
+
+.userIMG{
+  margin-right: 15px;
+  max-width: 60px !important;
+  max-height: 60px !important;
+  border: 1px solid #4C4CFF;
+  margin-left: 10px;
+}
+.more{
+  font-weight: bold;
+  color: #4C4CFF;
+  cursor: pointer;
+}
