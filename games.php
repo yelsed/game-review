@@ -16,7 +16,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 if (isset($_POST['search'])) {
     $fields = "id, name, cover.image_id";
-    $games =  IGDBgameController($_POST['search']);
+    $games =  IGDBgameController($_POST['search'], $fields);
 }
 ?>
 
@@ -37,7 +37,7 @@ if (isset($_POST['search'])) {
         <label class="custom-field">
             <span class="placeholder">Search your game</span>
             <input class="input_search" type="text" name="search" id="search" placeholder="&nbsp" ;></input>
-            <button type="submit" value="search">Search</button>
+            <button type="submit" class="boxbtn" value="search">Search</button>
         </label>
     </form>
     <div class="containerbox">

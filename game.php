@@ -14,7 +14,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 if (isset($_POST['game'])) {
     $fields = "id, name, summary, cover.image_id, genres.name";
-    $games = IGDBgameController($_POST['game'], $fields);
+    $games = IGDBgameController('Hollow Knight', $fields);
 }
 require_once("partials/nav.php");
 require_once("partials/head.php");
@@ -49,38 +49,41 @@ require_once("partials/head.php");
 
                         </div>
                         <div class="gamecontent">
+                            <!-- <div class="score"> -->
+                            <h1>Critics</h1>
                             <div class="score">
                                 <div class="scoreBall">10</div>
-                                <h1>Critics</h1>
                                 <p>vehicula. Suspendisse sit amet eros porttitor, accumsan ex non, egestas eros.
                                     Etiam bibendum rutrum efficitur. Ut dictum lacus ielementum convallis.
                                     Nullam mattis fringilla consequat. Cras luctus porttitor lectus.
-                                    Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui</p>
-                                <span href="#">Read more</span>
-                                <div class="smallReview">
-                                    <img src="" alt="user" />
-                                    <p>laoreet mi, sed tristique dui. Suspendisse scelerisque elementum convallis.
-                                        Nullam mattis fringilla consequat. Cras luctus porttitor lectus.
-                                        Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui</p>
-                                </div>
-
-                                <div class="scoreBall">9</div>
-                                <h1>Users</h1>
-                                <p>vehicula. Suspendisse sit amet eros porttitor, accumsan ex non, egestas eros.
-                                    Etiam bibendum rutrum efficitur. Ut dictum lacus ielementum convallis.
-                                    Nullam mattis fringilla consequat. Cras luctus porttitor lectus.
-                                    Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui</p>
-                                <span href="#">Read more</span>
-                                <div class="smallReview">
-                                    <img src="" alt="user" />
-                                    <p>laoreet mi, sed tristique dui. Suspendisse scelerisque elementum convallis.
-                                        Nullam mattis fringilla consequat. Cras luctus porttitor lectus.
-                                        Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui</p>
-                                </div>
-                            <button class="btn">Make your own review</button>
+                                    Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui
+                                </p>
                             </div>
-                            <p>
-                            </p>
+                            <div class="smallReview">
+                                <img class="userIMG" src="donnie.png" alt="user" />
+                                <p>laoreet mi, sed tristique dui. Suspendisse scelerisque elementum convallis.
+                                    Nullam mattis fringilla consequat. Cras luctus porttitor lectus.
+                                    Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui
+                                    <span class="more" href="#">Read more</span>
+                                </p>
+                            </div>
+
+                            <h1>Users</h1>
+                            <div class="scoreBall">9.3</div>
+                            <p>vehicula. Suspendisse sit amet eros porttitor, accumsan ex non, egestas eros.
+                                Etiam bibendum rutrum efficitur. Ut dictum lacus ielementum convallis.
+                                Nullam mattis fringilla consequat. Cras luctus porttitor lectus.
+                                Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui</p>
+                            <div class="smallReview">
+                                <img class="userIMG" src="donnie.png" alt="user" />
+                                <p>laoreet mi, sed tristique dui. Suspendisse scelerisque elementum convallis.
+                                    Nullam mattis fringilla consequat. Cras luctus porttitor lectus.
+                                    Suspendisse scelerisque non dui quis rhoncus. Integer tempus qui
+                                    <span class="more" href="#">Read more</span>
+                                </p>
+                            </div>
+                            <button class="btn">Make your own review</button>
+                            <!-- </div> -->
                         </div>
                     </div>
                 <?php endif; ?>
