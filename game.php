@@ -35,16 +35,17 @@ require_once("partials/head.php");
                         <div class="gamecontent">
                             <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/<?php echo $game->cover->image_id; ?>.jpg">
                             <h1><?php echo $game->name ?></h1>
-                            <p>Genres</p>
+                            <!-- <p>Genres</p> -->
                             <?php
                             foreach ($game->genres as $genres => $genre) {
                                 if ($genres === array_key_last($game->genres)) {
                                     echo $genre->name;
                                 } else {
-                                    echo $genre->name . ", ";
+                                    echo "Genres: " . $genre->name . ", ";
                                 }
                             }
                             ?>
+
                             <p><?php echo $game->summary ?></p>
 
                         </div>
